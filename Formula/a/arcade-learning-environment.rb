@@ -2,7 +2,7 @@ class ArcadeLearningEnvironment < Formula
   desc "Platform for AI research"
   homepage "https://github.com/Farama-Foundation/Arcade-Learning-Environment"
   url "https://github.com/Farama-Foundation/Arcade-Learning-Environment/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "021bc469903d7b7ea39e5cc51116baa9068e4d8e3b34bf0516767f49b84fa5c1"
+  sha256 "bdfa0faafb1ae4311c8c240b9a6f8b3ac02504b13787fd11e81856a9f21a5cb1"
   license "GPL-2.0-only"
   head "https://github.com/Farama-Foundation/Arcade-Learning-Environment.git", branch: "main"
 
