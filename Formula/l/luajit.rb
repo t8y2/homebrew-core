@@ -82,11 +82,11 @@ class Luajit < Formula
   test do
     assert_includes shell_output("#{bin}/luajit -v"), " #{version} "
 
-    system bin/"luajit", "-e", <<~EOS
+    system bin/"luajit", "-e", <<~LUA
       local ffi = require("ffi")
       ffi.cdef("int printf(const char *fmt, ...);")
       ffi.C.printf("Hello %s!\\n", "#{ENV["USER"]}")
-    EOS
+    LUA
 
     # Check that LuaJIT can find its own `jit.*` modules
     touch "empty.lua"
