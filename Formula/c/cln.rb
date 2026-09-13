@@ -38,6 +38,9 @@ class Cln < Formula
   depends_on "gmp"
 
   def install
+    # Apple clang 21 miscompiles the negative-index-via-unsigned idiom in `cl_DS.h`, breaking `make check`
+    ENV.append_to_cflags "-fwrapv-pointer" if DevelopmentTools.clang_build_version >= 2100
+
     system "./autogen.sh" if build.head?
     system "./configure", *std_configure_args
     system "make"
