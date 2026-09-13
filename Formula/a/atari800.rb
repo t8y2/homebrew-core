@@ -14,11 +14,11 @@ class Atari800 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a7c56d32113ca1a169ce5075d66fb991a94ad23a930740c911744108574cfb8d"
-    sha256 cellar: :any, arm64_tahoe:       "87f19137d78d179aca6e54c962d50bdf119134e772d06e026a24277f067e2597"
-    sha256 cellar: :any, arm64_sequoia:     "4a2c9025cd4a3a5b2df6ff35a8135bdc7bf470bc80687c3260646f9e9b3624fa"
-    sha256 cellar: :any, arm64_linux:       "20981f9ab39646a86250aa1829e4ddff0f61acfe005bcf109e24c3de0ad4cae5"
-    sha256 cellar: :any, x86_64_linux:      "18f6368144b584fa383d34345835ce194e1f200fc9d9d96618c27aa3bbd87246"
+    sha256 cellar: :any, arm64_golden_gate: "e54b7c107c468e2faaa0c81276963e11a73a0331d8c67e1111903a2abe168d19"
+    sha256 cellar: :any, arm64_tahoe:       "1a78f160dba996f258401f98d546aa6a83e00db080b263399b908ea91be2ad9c"
+    sha256 cellar: :any, arm64_sequoia:     "fbd24a748d2f1e8af3765c2dc2da68cf1e2fba087d64ee76de2a31117f760dff"
+    sha256 cellar: :any, arm64_linux:       "f5645c9c4eb7b64d1780fdfe53f8b5e95aab0d6c89eb4c377f9539e04f33211c"
+    sha256 cellar: :any, x86_64_linux:      "f1ac9b0c5df11c54667b715bcf8a084ce7a48a73a6a484c80e32cf3d7650a1e9"
   end
 
   head do
