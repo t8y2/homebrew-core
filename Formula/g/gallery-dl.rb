@@ -3,8 +3,8 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://codeberg.org/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/19/d2/f1b82357a388cea84df4cc6753e1e1ce72f9240ab77e4f7e2d26a7e49b0a/gallery_dl-1.32.11.tar.gz"
-  sha256 "f3d80cd5053361ad6740722ad2f86ea3d176fcec2b6423171d2dc6f2da7bfc60"
+  url "https://files.pythonhosted.org/packages/56/f3/8279603b010cb9d596457f08b7639158b1be0716e0e13bc768341eb14356/gallery_dl-1.32.12.tar.gz"
+  sha256 "27b12b76d968f703c5116ec5152850a01e7a844b1cdd74c3e98c93c5dcd2d3a5"
   license "GPL-2.0-only"
   head "https://codeberg.org/mikf/gallery-dl.git", branch: "master"
 
