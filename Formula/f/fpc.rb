@@ -29,6 +29,10 @@ class Fpc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3491933cdf5782d3c4b9b1188757cb3846b5d823a6db75c8fb56f13b23bc6747"
   end
 
+  on_macos do
+    depends_on "sevenzip" => :build # to extract the bootstrap dmg without `hdiutil`
+  end
+
   # mesa is needed to test GL unit
   on_linux do
     depends_on "mesa" => :test
@@ -38,7 +42,7 @@ class Fpc < Formula
 
   resource "bootstrap" do
     on_macos do
-      url "https://downloads.sourceforge.net/project/freepascal/Mac%20OS%20X/3.2.2/fpc-3.2.2.intelarm64-macosx.dmg"
+      url "https://downloads.sourceforge.net/project/freepascal/Mac%20OS%20X/3.2.2/fpc-3.2.2.intelarm64-macosx.dmg", using: :nounzip
       sha256 "05d4510c8c887e3c68de20272abf62171aa5b2ef1eba6bce25e4c0bc41ba8b7d"
     end
     on_linux do
@@ -67,7 +71,10 @@ class Fpc < Formula
 
     resource("bootstrap").stage do
       if OS.mac?
-        pkg_path = "fpc-3.2.2-intelarm64-macosx.mpkg/Contents/Packages/fpc-3.2.2-intelarm64-macosx.pkg"
+        # Extract the dmg with 7zz as the sandbox does not allow `hdiutil attach`
+        system "7zz", "x", "-y", Dir["*.dmg"].first
+        pkg_path = "fpc-3.2.2.intelarm64-macosx/fpc-3.2.2-intelarm64-macosx.mpkg/Contents/Packages/" \
+                   "fpc-3.2.2-intelarm64-macosx.pkg"
         system "pkgutil", "--expand-full", pkg_path, "contents"
         fpc_bootstrap.install Dir["contents/Payload/usr/local/*"]
       else
